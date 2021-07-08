@@ -49,6 +49,35 @@ namespace TicTacToeProblem
             Console.WriteLine("The computer letter is: {0}", playerLetter[1]);
             return playerLetter;
         }
+        public void SelectPosition(int player,char[] board)
+        {
+            Console.WriteLine("Enter the postion:");
+            int position = Convert.ToInt32(Console.ReadLine());
+            if (position <= 9 && position >= 1) {
+                if (board[position] != 'X' && board[position] != 'O'){
+                    if (player == 0)
+                    {
+                        Console.WriteLine("Player Plays");
+                        board[position] = 'X';
+                        ShowBoard(board);
+                    } else if (player == 1)
+                    {
+                        Console.WriteLine("Computer Plays");
+                        board[position] = 'O';
+                        ShowBoard(board);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("The position is already taken");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please enter valid integer between 1 and 9");
+            }
+
+        }
         public void ShowBoard(char[] board)
         {
             Console.WriteLine("*******The Current Board*******");

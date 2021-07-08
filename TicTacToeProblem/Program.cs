@@ -10,7 +10,8 @@ namespace TicTacToeProblem
             TicTacToeGame ticTacToeGame = new TicTacToeGame();
             char[] board = ticTacToeGame.CreateBoard();
             char[] playerLetter = ticTacToeGame.ChooseXorO();
-            ticTacToeGame.DisplayBoard(board);
+            ticTacToeGame.ShowBoard(board);
+            ticTacToeGame.SelectPosition(0, board);
         }
     }
 }
