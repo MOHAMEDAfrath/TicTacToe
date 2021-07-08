@@ -11,7 +11,7 @@ namespace TicTacToeProblem
             char[] board = ticTacToeGame.CreateBoard();
             char[] playerLetter = ticTacToeGame.ChooseXorO();
             ticTacToeGame.ShowBoard(board);
-            ticTacToeGame.SelectPosition(0, board);
+            ticTacToeGame.SelectPosition(0, board,playerLetter[0],playerLetter[1]);
         }
     }
 }

@@ -49,33 +49,40 @@ namespace TicTacToeProblem
             Console.WriteLine("The computer letter is: {0}", playerLetter[1]);
             return playerLetter;
         }
-        public void SelectPosition(int player,char[] board)
+        public void SelectPosition(int player,char[] board,char playerkey,char computerkey)
         {
+            int win = 0;
             Console.WriteLine("Enter the postion:");
             int position = Convert.ToInt32(Console.ReadLine());
-            if (position <= 9 && position >= 1) {
-                if (board[position] != 'X' && board[position] != 'O'){
-                    if (player == 0)
+                if (position <= 9 && position >= 1)
+                {
+                    if (board[position] != 'X' && board[position] != 'O')
                     {
-                        Console.WriteLine("Player Plays");
-                        board[position] = 'X';
+                        if (player == 0 && win == 0)
+                        {
+                            Console.WriteLine("Player Played");
+                            board[position] = playerkey;
+                        SelectPosition(1, board, playerkey, computerkey);
+                            ShowBoard(board);
+                        }
+                        else if (player == 1 && win == 0)
+                        {
+                            Console.WriteLine("Computer Played");
+                            board[position] = computerkey;
+                        SelectPosition(0, board, playerkey, computerkey);
                         ShowBoard(board);
-                    } else if (player == 1)
+                        }
+                    }
+                    else
                     {
-                        Console.WriteLine("Computer Plays");
-                        board[position] = 'O';
-                        ShowBoard(board);
+                        Console.WriteLine("The position is already taken");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("The position is already taken");
+                    Console.WriteLine("Please enter valid integer between 1 and 9");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Please enter valid integer between 1 and 9");
-            }
+            
 
         }
         public void ShowBoard(char[] board)
