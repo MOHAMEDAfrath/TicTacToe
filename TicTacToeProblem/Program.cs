@@ -8,7 +8,7 @@ namespace TicTacToeProblem
         {
             Console.WriteLine("Welcome to Tic Tac Toe Problem");
             TicTacToeGame ticTacToeGame = new TicTacToeGame();
-            ticTacToeGame.createBoard();
+            ticTacToeGame.CreateBoard();
         }
     }
 }
