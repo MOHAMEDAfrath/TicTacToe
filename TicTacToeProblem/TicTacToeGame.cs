@@ -16,7 +16,7 @@ namespace TicTacToeProblem
         {
             for(int i = 1; i < boardArray.Length; i++)
             {
-                boardArray[i] = '0';
+                boardArray[i] = ' ';
             }
             return boardArray;
 
@@ -25,18 +25,18 @@ namespace TicTacToeProblem
         {
             char[] playerLetter = new char[2];
             Console.WriteLine("Player 1 enter the character which you want to play X or O ");
-            char playerHold = Convert.ToChar(Console.ReadLine());
+            string playerHold = Console.ReadLine();
           
-            if (playerHold == 'X' || playerHold == 'O')
+            if (playerHold.ToLower() == "x" || playerHold.ToLower() == "o")
             {
-                if (playerHold == 'X')
+                if (playerHold.ToLower() == "x")
                 {
-                    playerLetter[0] = playerHold;
+                    playerLetter[0] = Convert.ToChar(playerHold);
                     playerLetter[1] = 'O';
                 }
                 else
                 {
-                    playerLetter[0] = playerHold;
+                    playerLetter[0] = Convert.ToChar(playerHold);
                     playerLetter[1] = 'X';
                     
                 }
@@ -45,7 +45,19 @@ namespace TicTacToeProblem
             {
                 Console.WriteLine("Please enter X or Y");
             }
+            Console.WriteLine("The players letter is: {0}",playerLetter[0]);
+            Console.WriteLine("The computer letter is: {0}", playerLetter[1]);
             return playerLetter;
+        }
+        public void DisplayBoard(char[] board)
+        {
+            Console.WriteLine("*******The Current Board*******");
+            Console.WriteLine(boardArray[1]+" | "+boardArray[2]+" | "+boardArray[3]);
+            Console.WriteLine("------------");
+            Console.WriteLine(boardArray[4] + " | " + boardArray[5] + " | " + boardArray[6]);
+            Console.WriteLine("------------");
+            Console.WriteLine(boardArray[7] + " | " + boardArray[8] + " | " + boardArray[9]);
+            
         }
 
     }
