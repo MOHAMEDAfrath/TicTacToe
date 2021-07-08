@@ -8,7 +8,8 @@ namespace TicTacToeProblem
         {
             Console.WriteLine("Welcome to Tic Tac Toe Problem");
             TicTacToeGame ticTacToeGame = new TicTacToeGame();
-            ticTacToeGame.CreateBoard();
+            char[] board = ticTacToeGame.CreateBoard();
+            char[] playerLetter = ticTacToeGame.ChooseXorO();
         }
     }
 }
