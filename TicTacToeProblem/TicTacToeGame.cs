@@ -49,7 +49,7 @@ namespace TicTacToeProblem
             Console.WriteLine("The computer letter is: {0}", playerLetter[1]);
             return playerLetter;
         }
-        public void DisplayBoard(char[] board)
+        public void ShowBoard(char[] board)
         {
             Console.WriteLine("*******The Current Board*******");
             Console.WriteLine(boardArray[1]+" | "+boardArray[2]+" | "+boardArray[3]);
