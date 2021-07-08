@@ -62,15 +62,17 @@ namespace TicTacToeProblem
                         {
                             Console.WriteLine("Player Played");
                             board[position] = playerkey;
-                        SelectPosition(1, board, playerkey, computerkey);
-                            ShowBoard(board);
+                            ShowBoard(board);   
+                            SelectPosition(1, board, playerkey, computerkey);
+                            
                         }
                         else if (player == 1 && win == 0)
                         {
                             Console.WriteLine("Computer Played");
                             board[position] = computerkey;
-                        SelectPosition(0, board, playerkey, computerkey);
-                        ShowBoard(board);
+                            ShowBoard(board);
+                            SelectPosition(0, board, playerkey, computerkey);
+                            
                         }
                     }
                     else
